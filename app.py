@@ -222,10 +222,10 @@ units = "miles"
 
 @app.route('/')
 def index():
-    reading = take_measure(threshold_img, threshold_ln, minLineLength, maxLineGap,
+    readings = take_measure(threshold_img, threshold_ln, minLineLength, maxLineGap,
                            diff1LowerBound, diff1UpperBound, diff2LowerBound, diff2UpperBound,
                            min_angle, max_angle, min_value, max_value, units)
-    return render_template('index.html', reading=reading)
+    return render_template('index.html', readings=readings)
 
 @app.route('/video_feed')
 def video_feed():
